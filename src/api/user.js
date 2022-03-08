@@ -8,11 +8,25 @@ export function login(data) {
     data
   })
 }
-
-export function getInfo(token) {
-
+// 获取用户资料接口
+export function getUserInfo(token) {
+  return request({
+    url: '/sys/profile',
+    method: 'post'
+  })
 }
-
+/**
+ *
+ * @param id
+ * @returns {*}
+ * 根据用户id获取用户的详情
+ *
+ */
+export function getUserDetailById(id) {
+  return request({
+    url: `/sys/user/${id}`
+  })
+}
 export function logout() {
 
 }
