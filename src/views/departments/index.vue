@@ -49,10 +49,10 @@ export default {
       this.showDialog = true
       this.node = node
     },
-    editDepts(node) {
-      this.showDialog = true // 弹出层
+    async editDepts(node) {
+      await this.$refs.addDept.getDepartDetail(node.id)
       this.node = node
-      this.$refs.addDept.getDepartDetail(node.id)
+      this.showDialog = true // 弹出层
     }
   },
   created() {
